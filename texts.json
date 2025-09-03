@@ -1,0 +1,23 @@
+{
+  "easy": [
+    "The sun sets in the west.",
+    "I like to play with my dog.",
+    "Typing is fun when you practice daily.",
+    "Books are the best way to learn new things.",
+    "She sells seashells by the seashore."
+  ],
+  "medium": [
+    "The quick brown fox jumps over the lazy dog.",
+    "Technology is evolving rapidly and shaping our future.",
+    "Practicing typing every day improves both speed and accuracy.",
+    "Python is a versatile programming language used worldwide.",
+    "Traveling helps us explore different cultures and traditions."
+  ],
+  "hard": [
+    "A journey of a thousand miles begins with a single step, yet persistence is the true measure of success.",
+    "In the midst of chaos, there is also opportunity, but only the patient can truly recognize it.",
+    "Complex algorithms require not only logical thinking but also creativity to solve real-world problems.",
+    "The art of communication lies in understanding what is not said, as much as what is spoken.",
+    "Typing quickly is meaningless unless combined with precision, rhythm, and endurance."
+  ]
+}
