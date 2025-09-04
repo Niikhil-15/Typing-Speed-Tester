@@ -1,10 +1,14 @@
 import time
 import json
 import random
+# loading Texts from json file
 with open("texts.json",'r') as f:
     typing_texts = json.load(f)
 
+# Menu
 print("\n-----------Welcome to Typing Speed Tester-------------\n Enter 'Q' to Exit")
+
+# selects (easy,medium,hard) and randomly choose one from it. 
 def get_text(level):
     if level == '1':
         text = random.choice(typing_texts['easy'])
@@ -15,6 +19,7 @@ def get_text(level):
     
     return text
 
+# Take test input and calculates words per miniute
 def wpm_tester(text):
     words = text.split()
     print(f"\n{text}\n")
@@ -32,6 +37,7 @@ def wpm_tester(text):
     print(f"\nTyping Speed is : {wpm:.2f}")
     return test,wpm
 
+# Calculates Accuracy by matching each character.
 def accuracy(text,test):
     total = len(text)
     correct = 0
@@ -44,7 +50,7 @@ def accuracy(text,test):
 
 
 
-
+# Driver
 while True:
     print("\nChoose Difficulty Level - \n 1 - Easy\n 2 - Medium\n 3 - Hard")
     level = input("Enter (1,2,3): ")
