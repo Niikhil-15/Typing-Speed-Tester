@@ -6,31 +6,41 @@ with open("texts.json",'r') as f:
 
 print("\n-----------Welcome to Typing Speed Tester-------------\n Enter 'Q' to Exit")
 def get_text(level):
-    if level == 1:
+    if level == '1':
         text = random.choice(typing_texts['easy'])
-    elif level == 2:
+    elif level == '2':
         text = random.choice(typing_texts['medium'])
     else:
         text = random.choice(typing_texts['hard'])
     
     return text
 
-def tester(text):
+def wpm_tester(text):
     words = text.split()
-    print(text)
+    print(f"\n{text}\n")
     check = input("Press 'S' to start : ")
     if check.lower() == 'q':
         quit()
     if check.lower() == 's':
         start =time.time()
-    test = input("Start Typing\n")
+        test = input("Start Typing\n")
     end = time.time()
     noOfWords = len(words)
     timetaken = (end-start)/60
     noOfWordsTyped = len(test.split())
     wpm = noOfWordsTyped/timetaken
     print(f"\nTyping Speed is : {wpm:.2f}")
+    return test,wpm
 
+def accuracy(text,test):
+    total = len(text)
+    correct = 0
+    for i,j in zip(text,test):
+        if i == j:
+            correct += 1
+
+    accuracy_percentage = (correct/total)*100
+    print(f"Accuracy : {accuracy_percentage:2f}")
 
 
 
@@ -42,7 +52,10 @@ while True:
         quit()
     if int(level) in [1,2,3]:
          text=get_text(level)
-         tester(text)
+         test,wpm = wpm_tester(text)
+         accuracy(text,test) 
+         
+
     else :
         print("Invalid Input")
         continue
